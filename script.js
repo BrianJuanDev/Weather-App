@@ -28,11 +28,25 @@ function callApi(city, country) {
             if (dataJson.cod === '404') {
                 showError('Ciudad no encontrada');
             } else {
+                clearHTML();
                 showWeather();
             }
-            console.log(dataJson)
-        }
+            console.log(dataJson);
+        } 
     )
+}
+
+function showWeather(data) {
+    const { name, main: {temp, temp_min, temp_max}, weather: [arr] } = data; 
+
+    const content = document.createElement('div');
+    content.innerHTML = `
+        <h5>Clima en ${name}</h5>
+        <img src="" alt="">
+        <h2>${temp}</h2>
+        <p>Min: ${temp_min}</p>
+        <p>Max: ${temp_max}</p>
+    `;
 }
 
 function showError(message) {
@@ -45,4 +59,9 @@ function showError(message) {
     setTimeout(() => {
         alert.remove();
     }, 3000);
+}
+
+function clearHTML() {
+    result.innerHTML = '';
+    return;
 }
