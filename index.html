@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+   
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- indica al navegador que no espere por el script. En lugar de ello, debe seguir procesando el HTML, construir el DOM. El script carga “en segundo plano” y se ejecuta cuando el DOM esta completo.-->
+    <script src="./script.js" defer></script>
 </head>
 <body>
-    <header>
-
-    </header>
-    <main>
+    <section class="weather-content">
+        <h1>Buscador del clima</h1>
+        <div class="result">
+            <p>Agregue ciudad y pais</p>
+        </div>
         <form action="" method="POST" class="get-weather">
-            <input type="text" id="country">Ingrese el nombre de un país
-            <input type="text" id="city">Ingrese el nombre de una ciudad
-        </form>
-    </main>
-    <footer>
-        <h6>Copyright</h6>
-    </footer>
+            <input type="text" name="city" id="city" placeholder="Write your city: ">
+            <select name="" id="country">
+                <option disabled selected value="">Select the country</option>
+                <option value="AR">Argentina</option>
+                <option value="CO">Colombia</option>
+                <option value="CR">Costa Rica</option>
+                <option value="ES">España</option>
+                <option value="US">Estados Unidos</option>
+                <option value="MX">México</option>
+                <option value="PE">Perú</option>
+            </select>
+            <input type="submit" name="" id="" value="Get Weather">
+    </section>
 </body>
 </html>
